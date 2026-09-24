@@ -1,0 +1,1895 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+/* =========================
+   PATIENT LAYOUT
+========================= */
+
+.patient-layout {
+    min-height: 100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.patient-sidebar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+
+    width: 250px;
+
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    z-index: 1000;
+}
+
+
+/* Logo */
+
+.patient-logo {
+    padding: 25px 22px;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    color: #0f172a;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.patient-logo span {
+    color: #0284c7;
+}
+
+
+/* Sidebar Scrollbar */
+
+.patient-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.patient-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.patient-sidebar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.patient-sidebar::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+
+/* Navigation */
+
+.patient-sidebar nav {
+    padding: 25px 14px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.patient-nav-link {
+    display: flex;
+    align-items: center;
+
+    padding: 13px 14px;
+
+    border-radius: 10px;
+
+    color: #475569;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.patient-nav-link:hover {
+    background: #f0f9ff;
+    color: #0284c7;
+    transform: translateX(3px);
+}
+
+.patient-nav-link.active {
+    background: #0284c7;
+    color: #ffffff;
+}
+
+/* =========================
+   LOGOUT
+========================= */
+
+.patient-sidebar-bottom {
+    margin-top: auto;
+    padding: 15px;
+
+    border-top: 1px solid #e2e8f0;
+}
+
+.patient-logout {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+
+    background: #fef2f2;
+    color: #dc2626;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.patient-logout:hover {
+    background: #fee2e2;
+    border-color: #fca5a5;
+    color: #b91c1c;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.patient-main {
+    margin-left: 290px;
+    min-height: 100vh;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.patient-navbar {
+    height: 75px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.patient-navbar h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.patient-user {
+    background: #f8fafc;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #334155;
+}
+
+/* =========================
+   PAGE CONTENT
+========================= */
+
+.patient-content {
+    padding: 30px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .patient-sidebar {
+        width: 210px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .patient-sidebar {
+        display: none;
+    }
+
+    .patient-navbar {
+        padding: 0 20px;
+    }
+
+    .patient-content {
+        padding: 20px;
+    }
+
+}
+/* =========================
+   PATIENT DASHBOARD
+========================= */
+
+.patient-welcome {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.patient-welcome h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.patient-welcome p {
+    color: #64748b;
+}
+
+.patient-primary-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #0284c7;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.patient-primary-btn:hover {
+    background: #0369a1;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.patient-section {
+    margin-bottom: 35px;
+}
+
+.patient-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.patient-section-header h2 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.patient-section-header p {
+    color: #64748b;
+}
+
+.patient-section-header a {
+    color: #0284c7;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+/* =========================
+   UPCOMING APPOINTMENT
+========================= */
+
+.upcoming-appointment {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.appointment-date {
+    width: 70px;
+    height: 75px;
+    background: #e0f2fe;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.appointment-date span {
+    font-size: 13px;
+    color: #0284c7;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.appointment-date strong {
+    font-size: 28px;
+    color: #0f172a;
+}
+
+.appointment-info {
+    flex: 1;
+}
+
+.appointment-info h3 {
+    margin-bottom: 5px;
+}
+
+.appointment-info p {
+    color: #0284c7;
+    margin-bottom: 5px;
+}
+
+.appointment-info span {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.appointment-status {
+    padding: 8px 14px;
+    background: #dcfce7;
+    color: #166534;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.empty-appointment {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.empty-appointment h3 {
+    margin-bottom: 8px;
+}
+
+.empty-appointment p {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   STATISTICS
+========================= */
+
+.patient-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.patient-stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.patient-stat-card span {
+    display: block;
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.patient-stat-card strong {
+    font-size: 30px;
+    color: #0f172a;
+}
+
+
+/* =========================
+   DEPARTMENTS
+========================= */
+
+.patient-department-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.patient-department-card {
+    text-decoration: none;
+    color: inherit;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.patient-department-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.department-icon {
+    width: 45px;
+    height: 45px;
+    background: #e0f2fe;
+    color: #0284c7;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.patient-department-card h3 {
+    margin-bottom: 10px;
+}
+
+.patient-department-card p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.patient-department-card > span {
+    color: #0284c7;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   DOCTORS
+========================= */
+
+.patient-doctor-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.patient-doctor-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.patient-doctor-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.doctor-image {
+    width: 100%;
+    height: 180px;
+    background: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.doctor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.doctor-placeholder {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #0284c7;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.doctor-info {
+    padding: 20px 20px 10px;
+}
+
+.doctor-info h3 {
+    margin-bottom: 6px;
+}
+
+.doctor-info p {
+    color: #0284c7;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.doctor-info span {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.doctor-view-btn {
+    display: block;
+    margin: 10px 20px 20px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #0284c7;
+    border-radius: 8px;
+    color: #0284c7;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.doctor-view-btn:hover {
+    background: #0284c7;
+    color: white;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+    .patient-doctor-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .patient-department-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .patient-welcome {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .patient-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .upcoming-appointment {
+        flex-wrap: wrap;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .patient-doctor-grid,
+    .patient-department-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .patient-content {
+        padding: 20px;
+    }
+
+}
+.patient-page-header {
+    margin-bottom: 30px;
+}
+
+.patient-page-header h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.patient-page-header p {
+    color: #64748b;
+}
+/* =========================
+   DOCTOR PROFILE
+========================= */
+
+.patient-back-link {
+    color: #0284c7;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.patient-back-link:hover {
+    color: #0369a1;
+}
+
+.doctor-profile {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    display: flex;
+    gap: 35px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.doctor-profile-image {
+    width: 220px;
+    height: 260px;
+    background: #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.doctor-profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.doctor-profile-placeholder {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: #0284c7;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.doctor-profile-info {
+    flex: 1;
+}
+
+.doctor-profile-info h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.doctor-profile-specialization {
+    color: #0284c7;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.doctor-profile-department {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+.doctor-profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.doctor-profile-details div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.doctor-profile-details strong {
+    font-size: 14px;
+    color: #475569;
+}
+
+.doctor-profile-details span {
+    color: #64748b;
+}
+
+.doctor-bio {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.doctor-bio h2 {
+    margin-bottom: 15px;
+}
+
+.doctor-bio p {
+    color: #64748b;
+    line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+
+    .doctor-profile {
+        flex-direction: column;
+    }
+
+    .doctor-profile-image {
+        width: 100%;
+        height: 250px;
+    }
+
+}
+.department-view-btn {
+    display: block;
+    margin-top: 18px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #0284c7;
+    border-radius: 8px;
+    color: #0284c7;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.department-view-btn:hover {
+    background: #0284c7;
+    color: white;
+}
+/* =========================
+   DEPARTMENT PROFILE
+========================= */
+
+.department-profile {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.department-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.department-profile-icon {
+    width: 80px;
+    height: 80px;
+    background: #e0f2fe;
+    color: #0284c7;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.department-profile-header h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.department-profile-header p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.department-profile-doctors {
+    margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+
+    .department-profile {
+        padding: 20px;
+    }
+
+    .department-profile-header {
+        align-items: flex-start;
+    }
+
+    .department-profile-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .department-profile-header h2 {
+        font-size: 24px;
+    }
+
+}
+/* =========================
+   PATIENT APPOINTMENTS
+========================= */
+
+.patient-success {
+    background: #dcfce7;
+    color: #166534;
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.patient-appointments {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.patient-appointment-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.patient-appointment-date {
+    width: 75px;
+    min-width: 75px;
+    height: 85px;
+    background: #e0f2fe;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.patient-appointment-date span {
+    color: #0284c7;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.patient-appointment-date strong {
+    font-size: 28px;
+    color: #0f172a;
+}
+
+.patient-appointment-date small {
+    color: #64748b;
+    font-size: 11px;
+}
+
+.patient-appointment-info {
+    flex: 1;
+}
+
+.patient-appointment-info h3 {
+    margin-bottom: 5px;
+}
+
+.patient-appointment-info p {
+    color: #0284c7;
+    margin-bottom: 5px;
+}
+
+.patient-appointment-info > span {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.patient-appointment-time {
+    margin-top: 8px;
+    color: #475569;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.patient-appointment-status span {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.status-pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-confirmed {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status-completed {
+    background: #e0f2fe;
+    color: #075985;
+}
+
+.status-cancelled {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+@media (max-width: 700px) {
+
+    .patient-appointment-card {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .patient-appointment-info {
+        min-width: calc(100% - 110px);
+    }
+
+    .patient-appointment-status {
+        width: 100%;
+        margin-left: 100px;
+    }
+
+}
+/* =========================
+   PATIENT FORM
+========================= */
+
+.patient-secondary-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #e5e7eb;
+    color: #374151;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.patient-secondary-btn:hover {
+    background: #d1d5db;
+}
+
+.patient-form-container {
+    max-width: 800px;
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.patient-form-group {
+    margin-bottom: 22px;
+}
+
+.patient-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.patient-form-group input,
+.patient-form-group select,
+.patient-form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d9dee7;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    background: white;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.patient-form-group input:focus,
+.patient-form-group select:focus,
+.patient-form-group textarea:focus {
+    border-color: #0284c7;
+}
+
+.patient-form-group textarea {
+    resize: vertical;
+}
+
+.patient-error {
+    display: block;
+    margin-top: 6px;
+    color: #dc2626;
+    font-size: 14px;
+}
+
+.patient-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.patient-form-actions .patient-primary-btn,
+.patient-form-actions .patient-secondary-btn {
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+
+    .patient-form-container {
+        padding: 20px;
+    }
+
+    .patient-form-actions {
+        flex-direction: column;
+    }
+
+    .patient-form-actions a,
+    .patient-form-actions button {
+        width: 100%;
+        text-align: center;
+    }
+
+}
+.patient-appointment-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.patient-cancel-btn {
+    padding: 8px 14px;
+    border: 1px solid #dc2626;
+    border-radius: 8px;
+    background: white;
+    color: #dc2626;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.patient-cancel-btn:hover {
+    background: #dc2626;
+    color: white;
+}
+.patient-error-box {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+/* =========================
+   PATIENT PROFILE
+========================= */
+
+.patient-profile-card {
+    background: white;
+    padding: 35px;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+}
+
+.patient-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.patient-profile-header .patient-primary-btn {
+    margin-left: auto;
+}
+
+.patient-profile-avatar {
+    width: 75px;
+    height: 75px;
+
+    border-radius: 50%;
+
+    background: #0284c7;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    flex-shrink: 0;
+}
+
+.patient-profile-header h2 {
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
+.patient-profile-header p {
+    color: #0284c7;
+    font-weight: 600;
+}
+
+.patient-profile-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.patient-profile-field {
+    padding: 18px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+}
+
+.patient-profile-field span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.patient-profile-field strong {
+    color: #0f172a;
+    font-size: 15px;
+}
+
+@media (max-width: 600px) {
+
+    .patient-profile-card {
+        padding: 20px;
+    }
+
+    .patient-profile-details {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =========================
+   PROFILE FORM SECTIONS
+========================= */
+
+.patient-form-section {
+    padding-bottom: 18px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.patient-form-section h3 {
+    margin-bottom: 6px;
+    font-size: 18px;
+    color: #0f172a;
+}
+
+.patient-form-section p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.patient-password-section {
+    margin-top: 35px;
+}
+/* =========================================================
+   GUEST SIDEBAR ACTIONS
+========================================================= */
+
+.patient-login-btn,
+.patient-register-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 42px;
+    padding: 0 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.patient-login-btn {
+    background: #0284c7;
+    border: 1px solid #0284c7;
+    color: #ffffff;
+}
+
+.patient-login-btn:hover {
+    background: #0369a1;
+    border-color: #0369a1;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.patient-register-btn {
+    margin-top: 9px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+}
+
+.patient-register-btn:hover {
+    background: #f8fafc;
+    border-color: #0284c7;
+    color: #0284c7;
+}
+/* =========================================================
+   PUBLIC DOCTORS PAGE
+========================================================= */
+
+.public-doctors-page {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.public-page-header {
+    margin-bottom: 42px;
+}
+
+.public-page-header .public-eyebrow {
+    margin-bottom: 10px;
+    color: #0284c7;
+}
+
+.public-page-header h1 {
+    margin: 0 0 12px;
+    color: #0f172a;
+    font-size: 38px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+}
+
+.public-page-header > p:last-child {
+    max-width: 650px;
+    margin: 0;
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.public-doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.public-doctor-card {
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    background: #ffffff;
+    text-decoration: none;
+    box-shadow: 0 6px 24px rgba(15, 23, 42, 0.05);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.public-doctor-card:hover {
+    transform: translateY(-4px);
+    border-color: #bae6fd;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.09);
+}
+
+.public-doctor-image {
+    width: 100%;
+    height: 270px;
+    overflow: hidden;
+    background: #f1f5f9;
+}
+
+.public-doctor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.public-doctor-card:hover .public-doctor-image img {
+    transform: scale(1.03);
+}
+
+.public-doctor-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f9ff;
+    color: #0284c7;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.public-doctor-info {
+    padding: 22px;
+}
+
+.public-doctor-info h2 {
+    margin: 0 0 7px;
+    color: #0f172a;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.public-doctor-specialization {
+    margin: 0 0 8px;
+    color: #0284c7;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.public-doctor-department {
+    display: block;
+    margin-bottom: 20px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.public-doctor-link {
+    color: #0284c7;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.public-empty-state {
+    grid-column: 1 / -1;
+    padding: 50px 30px;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.public-empty-state h3 {
+    margin: 0 0 8px;
+    color: #0f172a;
+    font-size: 18px;
+}
+
+.public-empty-state p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+/* =========================================================
+   PUBLIC DOCTOR PROFILE
+========================================================= */
+
+.public-doctor-profile-page {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.public-profile-back {
+    margin-bottom: 25px;
+}
+
+.public-profile-back a {
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.public-profile-back a:hover {
+    color: #0284c7;
+}
+
+.public-doctor-profile {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 50px;
+    align-items: center;
+    padding: 35px;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
+}
+
+.public-doctor-profile-image {
+    width: 100%;
+    height: 430px;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #f1f5f9;
+}
+
+.public-doctor-profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.public-doctor-profile-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f9ff;
+    color: #0284c7;
+    font-size: 70px;
+    font-weight: 700;
+}
+
+.public-doctor-profile-info h1 {
+    margin: 0 0 10px;
+    color: #0f172a;
+    font-size: 42px;
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.public-doctor-profile-specialization {
+    margin: 0 0 28px;
+    color: #0284c7;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.public-doctor-contact {
+    margin-bottom: 30px;
+}
+
+.public-doctor-contact div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 13px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.public-doctor-contact strong {
+    color: #334155;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.public-doctor-contact span {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.public-doctor-bio {
+    margin-top: 30px;
+    padding: 35px;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    background: #ffffff;
+}
+
+.public-doctor-bio .public-eyebrow {
+    margin-bottom: 8px;
+    color: #0284c7;
+}
+
+.public-doctor-bio h2 {
+    margin: 0 0 14px;
+    color: #0f172a;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.public-doctor-bio > p:last-child {
+    max-width: 850px;
+    margin: 0;
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.8;
+}
+/* =========================================================
+   PUBLIC DEPARTMENTS PAGE
+========================================================= */
+
+.public-departments-page {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.public-departments-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.public-department-card {
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    background: #ffffff;
+    text-decoration: none;
+    box-shadow: 0 6px 24px rgba(15, 23, 42, 0.05);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.public-department-card:hover {
+    transform: translateY(-4px);
+    border-color: #bae6fd;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.09);
+}
+
+.public-department-image {
+    width: 100%;
+    height: 210px;
+    overflow: hidden;
+    background: #f1f5f9;
+}
+
+.public-department-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.public-department-card:hover .public-department-image img {
+    transform: scale(1.03);
+}
+
+.public-department-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f9ff;
+    color: #0284c7;
+    font-size: 52px;
+    font-weight: 700;
+}
+
+.public-department-info {
+    padding: 22px;
+}
+
+.public-department-info h2 {
+    margin: 0 0 10px;
+    color: #0f172a;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.public-department-info p {
+    margin: 0 0 20px;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.public-department-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.public-department-footer > span:first-child {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.public-department-link {
+    color: #0284c7;
+    font-size: 13px;
+    font-weight: 600;
+}
+/* =========================================================
+   PUBLIC DEPARTMENT PROFILE
+========================================================= */
+
+.public-department-profile-page {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.public-department-profile {
+    margin-bottom: 55px;
+    padding: 35px;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
+}
+
+.public-department-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.public-department-profile-image {
+    width: 250px;
+    height: 210px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #f1f5f9;
+}
+
+.public-department-profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.public-department-profile-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f9ff;
+    color: #0284c7;
+    font-size: 52px;
+    font-weight: 700;
+}
+
+.public-department-profile-info {
+    flex: 1;
+}
+
+.public-department-profile-info h1 {
+    margin: 0 0 12px;
+    color: #0f172a;
+    font-size: 38px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+}
+
+.public-department-profile-info > p:not(.public-eyebrow) {
+    max-width: 700px;
+    margin: 0 0 18px;
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.public-department-doctor-count {
+    color: #0284c7;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.public-department-doctors .public-page-header {
+    margin-bottom: 35px;
+}
+
+.public-department-doctors .public-page-header h2 {
+    margin: 0 0 12px;
+    color: #0f172a;
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+@media (max-width: 700px) {
+
+    .public-department-profile {
+        padding: 25px;
+    }
+
+    .public-department-profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .public-department-profile-image {
+        width: 100%;
+        height: 230px;
+    }
+
+    .public-department-profile-info h1 {
+        font-size: 32px;
+    }
+
+}
+.patient-form-hint {
+    display: block;
+    margin-top: 7px;
+    color: #94a3b8;
+    font-size: 12px;
+}
+.patient-success-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 30px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(22, 101, 52, 0.15);
+}
+
+.patient-success-details span {
+    color: #166534;
+    font-size: 13px;
+}
+
+.patient-success-details strong {
+    font-weight: 600;
+}
+@media (max-width: 900px) {
+
+    .public-doctor-profile {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .public-doctor-profile-image {
+        height: 400px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .public-doctor-profile {
+        padding: 22px;
+    }
+
+    .public-doctor-profile-image {
+        height: 350px;
+    }
+
+    .public-doctor-profile-info h1 {
+        font-size: 34px;
+    }
+
+    .public-doctor-bio {
+        padding: 25px;
+    }
+}
+.appointment-time-section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.appointment-time-group h4 {
+    margin: 0 0 12px;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.appointment-time-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+/* =========================
+   APPOINTMENT TIME SLOTS
+========================= */
+
+.appointment-time-section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.appointment-time-group h4 {
+    margin: 0 0 12px;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.appointment-time-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.appointment-time-slot {
+    min-height: 44px;
+    padding: 0 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #334155;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Available slot */
+.appointment-time-slot:hover:not(:disabled) {
+    border-color: #0284c7;
+    background: #f0f9ff;
+    color: #0284c7;
+}
+
+/* Selected slot */
+.appointment-time-slot.selected {
+    border-color: #0284c7;
+    background: #0284c7;
+    color: #ffffff;
+}
+
+/* Unavailable slot */
+.appointment-time-slot:disabled,
+.appointment-time-slot.unavailable {
+    border-color: #d1d5db;
+    background: #e5e7eb;
+    color: #9ca3af;
+    cursor: not-allowed;
+    opacity: 1;
+    text-decoration: line-through;
+}
+
+/* Prevent hover from changing unavailable slot */
+.appointment-time-slot:disabled:hover,
+.appointment-time-slot.unavailable:hover {
+    border-color: #d1d5db;
+    background: #e5e7eb;
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+.patient-appointment-id {
+    display: block;
+    margin-bottom: 6px;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .appointment-time-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
